@@ -1,8 +1,10 @@
 //sistema de rutas que el sitio tendrá
-
+//componentes
 import Home from "../components/Home";
 import Book from "../components/Book";
-import Auth from "../components/Auth";
+import Error404 from "../components/Error404";
+
+//layout
 import Layout from "../layouts/Layout";
 const routes = [
   {
@@ -12,13 +14,16 @@ const routes = [
     routes: [
       {
         path: "/",
-        component: Auth,
+        component: Home,
         exact: true,
       },
       {
         path: "/libro",
         component: Book,
         exact: true,
+      },
+      {
+        component: Error404,
       },
     ],
   },
