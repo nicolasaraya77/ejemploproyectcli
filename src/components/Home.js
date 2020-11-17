@@ -1,10 +1,12 @@
 import React from "react";
-
+import { Container, Row } from "react-bootstrap";
 export default function Home() {
   return (
-    <div>
-      <h3>home</h3>
-    </div>
+    <Container fluid>
+      <Row>
+        <h3>home</h3>
+      </Row>
+    </Container>
   );
 }
 

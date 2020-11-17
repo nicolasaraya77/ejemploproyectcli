@@ -3,10 +3,11 @@
 import Home from "../components/Home";
 import Book from "../components/Book";
 import Auth from "../components/Auth";
+import Layout from "../layouts/Layout";
 const routes = [
   {
     path: "/",
-    component: Home,
+    component: Layout,
     exact: false,
     routes: [
       {
