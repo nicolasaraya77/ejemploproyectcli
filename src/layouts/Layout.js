@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 function Layout(props) {
   const { routes } = props;
+  console.log(props);
 
   return (
     <div>

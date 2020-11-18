@@ -36,3 +36,11 @@ path: (la ruta a la que se accede)
 component: archivo .js que se mostrará 
 exact: identificador que si la ruta es estricta o no
 */
+
+/* esquema de componentes:
+
+APP : componente base
+ - Layout: Componente de grid (donde cargamos los demas componentes)
+    - Libro: componente que tiene libros
+
+*/

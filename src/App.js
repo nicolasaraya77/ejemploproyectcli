@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 /* BrowserRouter as Router es la función que nos permitirá crear nuestro sistema de rutas
  Route : componente que utilizaremos para crear la ruta especifica, en nuestro caso le enviaremos
  el arreglo routes
-  Switch : componente que permite refrescar el navegador cuando cambiamos de pagina*/
+  Switch : componente que permite refrescar el navegador cuando cambiamos de ruta*/
 import routes from "./config/routes";
 
 function App() {
-  //console.log(routes);
+  console.log(routes); //aca puedo escribir js puro
   return (
     <Router>
       <Switch>
@@ -19,6 +19,7 @@ function App() {
   );
 }
 function RouteWithSubRoutes(route) {
+  console.log(route);
   return (
     <Route
       path={route.path}
