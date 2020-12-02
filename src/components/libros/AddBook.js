@@ -6,6 +6,7 @@ import { createBook } from "../../api/book";
 import { toast } from "react-toastify";
 
 export default function AddBook() {
+  //variable  de estado para el manejo de error de servidor
   const [error, setError] = useState("");
 
   const formik = useFormik({

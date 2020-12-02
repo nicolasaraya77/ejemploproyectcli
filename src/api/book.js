@@ -44,7 +44,6 @@ export function getBooks() {
 }
 
 //actualizar libro
-
 export function updateBook(id, libro) {
   const url = `${basePath}/books/${id}`; //debe ser igual a la ruta del back
 

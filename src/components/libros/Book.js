@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
-import cellEditFactory from "react-bootstrap-table2-editor";
+import { getBooks } from "../../api/book";
 
-import { getBooks, updateBook } from "../../api/book";
 export default function Book() {
-  const [rows, setRows] = useState({});
-
+  //seteamos el estado inicial de los libros retornados
   const [books, setBooks] = useState([]);
+  //seteo de recarga de libros
   const [reloadBooks, setReloadBooks] = useState(false);
+
+  // efecto que retorna los datos de la api de libros
   useEffect(() => {
     getBooks().then((response) => {
       setBooks(response);
@@ -30,30 +31,13 @@ export default function Book() {
     },
     {
       dataField: "title",
-      text: "Product Price",
+      text: "Titulo",
     },
     {
       dataField: "author",
       text: "author",
     },
   ];
-
-  const beforeSaveCell = async (oldValue, newValue, row, column, done) => {
-    console.log({ row });
-    const data = row;
-
-    console.log(column);
-
-    if (window.confirm("Estas seguro de realizar cambio?")) {
-      const response = await updateBook(row.id, { data });
-
-      done(true);
-    } else {
-      done(false);
-    }
-
-    return { async: true };
-  };
 
   return (
     <BootstrapTable
@@ -65,10 +49,6 @@ export default function Book() {
       striped
       hover
       condensed
-      cellEdit={cellEditFactory({
-        mode: "click",
-        beforeSaveCell,
-      })}
     />
   );
 }
